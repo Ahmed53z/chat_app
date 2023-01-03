@@ -17,7 +17,7 @@ class WeChat extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const SplashPage(),
     );
   }
 }

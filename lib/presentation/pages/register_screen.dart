@@ -58,7 +58,7 @@ class RegisterPage extends StatelessWidget {
               GestureDetector(
                 onTap: (() {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => MyHomePage())));
+                      MaterialPageRoute(builder: ((context) => const MyHomePage())));
                 }),
                 child: const CustomButton(
                   text: "REGISTER",
@@ -81,7 +81,7 @@ class RegisterPage extends StatelessWidget {
                     child: Text(
                       " Login",
                       style: GoogleFonts.acme(
-                        color: Color.fromARGB(255, 225, 217, 243),
+                        color: const Color.fromARGB(255, 225, 217, 243),
                       ),
                     ),
                   )
