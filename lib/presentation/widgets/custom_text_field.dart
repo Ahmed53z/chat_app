@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomTextField extends StatelessWidget {
-  CustomTextField({Key? key, this.hintText}) : super(key: key);
+class CustomTextFormField extends StatelessWidget {
+  CustomTextFormField({Key? key, this.hintText , this.onChanged}) : super(key: key);
   String? hintText;
+  Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (data) {
+        if(data!.isEmpty){
+          return "filed is required";
+        }
+      },
+      onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.acme(color: Colors.white),

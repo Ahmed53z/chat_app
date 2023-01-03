@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
           Image.asset(
-            Images.logoImage,
+            kLogo,
             height: 250,
           ),
           SizedBox(

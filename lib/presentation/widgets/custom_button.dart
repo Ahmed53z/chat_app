@@ -1,23 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scholar_chat/presentation/pages/home.dart';
-
-import '../pages/register_screen.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, this.text}) : super(key: key);
+ CustomButton({
+    Key? key,
+    this.text,
+    this.onTap,
+  }) ;
+ 
   final String? text;
+  VoidCallback? onTap;
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const MyHomePage(),
-              ));
-        },
+        onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(12)),

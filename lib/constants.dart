@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xff47307b);
 
-class Images {
-  Images._();
-  static const String logoImage = "assets/images/meetme.png";
-}
+
+ const String kLogo = "assets/images/meetme.png";
+
 const colorizeColors = [
   Colors.purple,
   Colors.blue,
