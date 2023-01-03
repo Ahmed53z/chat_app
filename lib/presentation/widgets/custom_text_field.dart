@@ -11,9 +11,9 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: GoogleFonts.acme(color: Colors.white),
         enabledBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+            const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         focusedBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+            const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
       ),
     );
   }

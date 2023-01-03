@@ -9,6 +9,8 @@ dependencies:
     flutter:
         sdk: flutter
     google_fonts:
+    get: 
+    animated_text_kit: ^4.2.2
 dev_dependencies:
     flutter_lints: ^1.0.0
     flutter_test:
@@ -19,10 +21,10 @@ flutter:
         - assets/images/
     fonts:
         -
-            family: Pacifico
+            family: Horizon
             fonts:
                 -
-                    asset: assets/fonts/Pacifico-Regular.ttf
+                    asset: assets/fonts/Horizon.ttf
 
 
   # To add assets to your application, add an assets section, like this:

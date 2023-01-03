@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scholar_chat/presentation/pages/home.dart';
-import 'package:scholar_chat/presentation/pages/register_screen.dart';
-import 'package:scholar_chat/presentation/pages/splash_page.dart';
-import 'package:scholar_chat/presentation/widgets/custom_button.dart';
-import 'package:scholar_chat/presentation/widgets/custom_text_field.dart';
+import 'package:scholar_chat/presentation/pages/login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+import '../widgets/custom_button.dart';
+import '../widgets/custom_text_field.dart';
+import 'home.dart';
 
+class RegisterPage extends StatelessWidget {
+   RegisterPage({Key? key}) : super(key: key);
+  String id = "RegisterPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 height: 25,
               ),
               Text(
-                "LOGIN",
+                "REGISTER",
                 textAlign: TextAlign.left,
                 style: GoogleFonts.acme(
                   textStyle: const TextStyle(color: Colors.white, fontSize: 28),
@@ -46,7 +46,6 @@ class LoginPage extends StatelessWidget {
               CustomTextField(
                 hintText: " Email",
               ),
-              
               const SizedBox(
                 height: 10,
               ),
@@ -58,14 +57,11 @@ class LoginPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: (() {
-                  Navigator.push(
-                      context,
-                      (MaterialPageRoute(
-                        builder: (context) =>  RegisterPage(),
-                      )));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => MyHomePage())));
                 }),
                 child: const CustomButton(
-                  text: "LOGIN",
+                  text: "REGISTER",
                 ),
               ),
               const SizedBox(
@@ -75,21 +71,17 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "don't have an account ?",
+                    "already have an account ?",
                     style: GoogleFonts.acme(color: Colors.white),
                   ),
                   GestureDetector(
                     onTap: (() {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>  RegisterPage(),
-                          ));
+                      Navigator.pop(context);
                     }),
                     child: Text(
-                      " Register",
+                      " Login",
                       style: GoogleFonts.acme(
-                        color: const Color.fromARGB(255, 225, 217, 243),
+                        color: Color.fromARGB(255, 225, 217, 243),
                       ),
                     ),
                   )
