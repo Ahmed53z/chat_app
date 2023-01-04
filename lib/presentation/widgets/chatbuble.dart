@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:scholar_chat/models/message.dart';
 
 import '../../constants.dart';
 
 class ChatBuble extends StatelessWidget {
   const ChatBuble({
     Key? key,
+     required this.message
   }) : super(key: key);
-
+ final Message message;
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        margin: const EdgeInsets.symmetric( horizontal: 16 , vertical: 8),
-        padding: const EdgeInsets.only(left: 16 , top: 24 , bottom: 24 , right: 16),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding:
+            const EdgeInsets.only(left: 16, top: 24, bottom: 24, right: 16),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(32),
@@ -22,8 +25,8 @@ class ChatBuble extends StatelessWidget {
           ),
           color: kPrimaryColor,
         ),
-        child: const Text(
-          "i am a new user ",
+        child:  Text(
+          message.message,
           style: TextStyle(color: Colors.white),
         ),
       ),

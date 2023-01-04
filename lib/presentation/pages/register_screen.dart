@@ -90,7 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         });
                         try {
                           await registerUser();
-                          Navigator.push(context, MaterialPageRoute(builder: (context) =>const ChatPage()) );
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()) );
 
                         } on FirebaseAuthException catch (ex) {
                           if (ex.code == 'weak-password') {

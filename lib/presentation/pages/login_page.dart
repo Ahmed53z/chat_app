@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {});
                           try {
                             await loginUser();
-                          Navigator.push(context, MaterialPageRoute(builder: (context) =>const ChatPage()) );
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()) );
                           } on FirebaseAuthException catch (ex) {
                             if (ex.code =='user-not-found') {
                               showSnackBar(context, "user not found");
