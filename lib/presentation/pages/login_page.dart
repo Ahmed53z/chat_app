@@ -79,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     onChanged: (data) {
                       password = data;
                     },
+                    obscureText: true,
                     hintText: " Password",
                   ),
                   const SizedBox(
@@ -99,9 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {});
                           try {
                             await loginUser();
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()) );
+                            Navigator.pushNamed(context, "ChatPage",
+                                arguments: email);
                           } on FirebaseAuthException catch (ex) {
-                            if (ex.code =='user-not-found') {
+                            if (ex.code == 'user-not-found') {
                               showSnackBar(context, "user not found");
                             } else if (ex.code == 'wrong-password') {
                               showSnackBar(context, "wrong password");
@@ -128,11 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       GestureDetector(
                         onTap: (() {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ));
+                          Navigator.pushNamed(context, "RegisterPage");
                         }),
                         child: Text(
                           " Register",
